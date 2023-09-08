@@ -1,3 +1,5 @@
+//determinant of the marix
+
 #include<iostream>
 #include<stdio.h>
 
