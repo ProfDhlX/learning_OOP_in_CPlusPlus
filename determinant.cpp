@@ -1,8 +1,6 @@
 //determinant of the marix
-
 #include<iostream>
 #include<stdio.h>
-
 using namespace std;
 
 int determinant2x2(int matrix[2][2]){
