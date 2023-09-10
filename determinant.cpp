@@ -1,4 +1,4 @@
-//determinant of the marix
+//CPP PROGRAM TO CALCULATE THE VALUE OF DITERMINANT...
 #include<iostream>
 #include<stdio.h>
 using namespace std;
