@@ -45,6 +45,7 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "initializer_list": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "iomanip": "cpp"
     }
 }

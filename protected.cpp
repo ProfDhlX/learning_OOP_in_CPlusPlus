@@ -9,7 +9,7 @@ class Animal {
 
 };
 
-class cats : Animal {
+class cats : Animal { 
     public:
     void display(){cout<<trait;}
 };
