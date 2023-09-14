@@ -72,6 +72,30 @@ int main() {
                 if (passwordManager.AuthenticateUser(username, password)) {
                     cout << "Authentication successful! Access granted." << endl;
                     //call the method of the main program to be executed here 
+                    /*
+                    
+                    
+                    
+                    
+                    
+                    YOUR MAIN METHOD/CLASS/OBJ HERE
+                    ------         ------      ------------
+                    ------         ------      ------------
+                    ------         ------           ---
+                    ------         ------           ---
+                    ---------------------           ---
+                    ---------------------           ---
+                    ---------------------           ---
+                    ------         ------           ---
+                    ------         ------           ---
+                    ------         ------      ------------
+                    ------         ------      ------------
+                    
+                    
+                    
+                    
+                    
+                    */
 
                 } else {
                     cout << "Authentication failed. Please try again." << endl;
