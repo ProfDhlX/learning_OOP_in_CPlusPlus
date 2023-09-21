@@ -1,3 +1,4 @@
+//simple cpp program to demonstrate object and class
 #include<iostream>
 #include<string>
 
