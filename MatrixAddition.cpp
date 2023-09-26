@@ -2,7 +2,6 @@
 #include<vector>
 
 using namespace std;
-
 class Matrix{
     private:
         int row1,col1,row2,col2;
