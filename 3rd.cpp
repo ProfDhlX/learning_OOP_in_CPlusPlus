@@ -38,7 +38,7 @@ public:
 
 int main() {
     int choice;
-    Third obj;
+    Third practice;
 
     while (true) {
         cout << "Choose an option:" << endl;
@@ -50,13 +50,13 @@ int main() {
 
         switch (choice) {
             case 1:
-                obj.calculate_circle();
+                practice.calculate_circle();
                 break;
             case 2:
-                obj.calculate_triangle();
+                practice.calculate_triangle();
                 break;
             case 3:
-                obj.calculate_rectangle();
+                practice.calculate_rectangle();
                 break;
             case 4:
                 cout << "Exiting program." << endl;

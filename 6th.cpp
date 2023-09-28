@@ -41,10 +41,10 @@ int main() {
     cout << "Enter the number of strings: ";
     cin >> size;
 
-    StringSorter sorter(size);
-    sorter.inputStrings();
-    sorter.sortStrings();
-    sorter.displaySortedStrings();
+    StringSorter obj(size);
+    obj.inputStrings();
+    obj.sortStrings();
+    obj.displaySortedStrings();
 
     return 0;
 }
