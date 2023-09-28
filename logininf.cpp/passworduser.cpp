@@ -108,7 +108,7 @@ public:
 };
 
 int main() {
-    PasswordManager passwordManager;
-    passwordManager.Run();
+    PasswordManager objpwd;
+    objpwd.Run();
     return 0;
 }
