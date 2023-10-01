@@ -1,4 +1,4 @@
-//find the position of a number in an array .
+//CPP code which can find the position of a number in an array .
 #include <iostream>
 #include <vector>
 

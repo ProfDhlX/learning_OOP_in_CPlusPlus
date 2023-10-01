@@ -1,4 +1,4 @@
-//C++ code to short given array element in ascending and descending order.
+//C++ code to short given array element in ascending and descending order.Using OBJECT and CLASS
 #include <iostream>
 using namespace std;
 

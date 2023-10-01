@@ -1,4 +1,4 @@
-//C++ program to short given array elements to ascending order
+//C++ program to sort given array elements to ascending order using sorting algorithm
 #include <iostream>
 using namespace std;
 
