@@ -1,5 +1,5 @@
 /*
- ==>>array of object
+                                                ==>>array of object
 
  in c++ , we can create an array of object just like we create an array of any other data types
  STEPS TO CREATE ARRAY OF OBJECTS
@@ -7,7 +7,6 @@
  2) Declare an array of that class type
  3) Initialize and work with the individual objects within the array
 */
-
 
 //EXAMPLEE
 #include<iostream>
