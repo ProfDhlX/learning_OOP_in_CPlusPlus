@@ -57,7 +57,6 @@ public:
             cerr << "Error: Could not open the file." << endl;
             return false;
         }
-
         while (file >> storedUsername >> storedPassword) {
             if (username == storedUsername && password == storedPassword) {
                 file.close();
@@ -68,8 +67,6 @@ public:
         file.close();
         return false; // User not found
     }
-
-
 
     // Main program logic
     void Run() {
