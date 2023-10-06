@@ -1,6 +1,6 @@
 //odd even withou modulas operator
 #include<iostream>
-#include<string>ll
+#include<string>
 
 using namespace std;
 int main(){
