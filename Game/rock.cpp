@@ -1,8 +1,6 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include <chrono>
-#include <thread>
 
 class Game {
 public:
@@ -13,7 +11,16 @@ public:
     void start() {
         std::cout << "Welcome to Rock, Paper, Scissors!" << std::endl;
         std::cout << "Get ready..." << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(3)); // Wait for 3 seconds
+        std::cout << "3... ";
+        std::cout.flush();
+        sleep(1);
+        std::cout << "2... ";
+        std::cout.flush();
+        sleep(1);
+        std::cout << "1... ";
+        std::cout.flush();
+        sleep(1);
+        std::cout << "Go!" << std::endl;
 
         std::cout << "Enter your choice (0 - Rock, 1 - Paper, 2 - Scissors): ";
         int userChoice;
@@ -36,6 +43,12 @@ public:
     }
 
 private:
+    void sleep(int seconds) {
+        clock_t endwait;
+        endwait = clock() + seconds * CLOCKS_PER_SEC;
+        while (clock() < endwait) {}
+    }
+
     void printChoice(int choice) {
         switch (choice) {
             case 0:
@@ -53,7 +66,7 @@ private:
         }
     }
 
-    void determineWinner(int userChoice, int computerChoice) {
+    int determineWinner(int userChoice, int computerChoice) {
         if (userChoice == computerChoice) {
             std::cout << "It's a tie!" << std::endl;
         } else if ((userChoice == 0 && computerChoice == 2) ||
