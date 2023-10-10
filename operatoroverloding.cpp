@@ -13,6 +13,7 @@ public:
 		imag = i; 
 	} 
 
+
 	// This is automatically called when '+' is used with 
 	// between two Complex objects 
 	Complex operator+(Complex const& obj) 

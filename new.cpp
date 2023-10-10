@@ -1,4 +1,4 @@
-// DMA USING NEW OPERATOR
+// Dinsmic Memory Allocation USING NEW OPERATOR
 #include <iostream>
 using namespace std;
 class practice
