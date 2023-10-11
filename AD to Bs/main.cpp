@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 class NepaliDate {
@@ -10,18 +11,14 @@ private:
     int monthAD;
     int dayAD;
 
-    // Array of days in a month for AD and BS
     int daysInMonthAD[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int daysInMonthBS[12] = {30, 30, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30};
-
-    // Constants for AD to BS conversion
     int AD_START_YEAR = 1943;
     int BS_START_YEAR = 2000;
     int AD_START_MONTH = 4;
     int AD_START_DAY = 13;
 
 public:
-    // Constructor to initialize the NepaliDate object
     NepaliDate(int year, int month, int day, bool isBS) {
         if (isBS) {
             yearBS = year;
@@ -36,14 +33,14 @@ public:
         }
     }
 
-    // Function to convert BS to AD
+    bool isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
     void convertBSToAD() {
         int bsYearDays = 0;
-        for (int i = 0; i < yearBS - BS_START_YEAR; i++) {
-            bsYearDays += 365;
-            for (int j = 0; j < 12; j++) {
-                bsYearDays += daysInMonthBS[j];
-            }
+        for (int i = BS_START_YEAR; i < yearBS; i++) {
+            bsYearDays += isLeapYear(i) ? 366 : 365;
         }
         for (int i = 0; i < monthBS - 1; i++) {
             bsYearDays += daysInMonthBS[i];
@@ -54,10 +51,8 @@ public:
         int adMonthDays = 0;
         for (int i = 0; i < 12; i++) {
             adMonthDays += daysInMonthAD[i];
-            if (i < AD_START_MONTH - 1) {
-                if (i == 1 && isLeapYear(AD_START_YEAR)) {
-                    adMonthDays++;
-                }
+            if (i == 1 && isLeapYear(AD_START_YEAR)) {
+                adMonthDays++;
             }
         }
         adMonthDays -= AD_START_DAY;
@@ -86,7 +81,6 @@ public:
         }
     }
 
-    // Function to convert AD to BS
     void convertADToBS() {
         int adYearDays = 0;
         for (int i = AD_START_YEAR; i < yearAD; i++) {
@@ -122,29 +116,59 @@ public:
         }
     }
 
-    // Function to check if a year is a leap year
-    bool isLeapYear(int year) {
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-    }
-
-    // Function to print the converted date in BS
     void printDateBS() {
-        cout << "Nepali Date: " << yearBS << "-" << monthBS << "-" << dayBS << endl;
+        cout << "Nepali Date (BS): " << yearBS << "-" << monthBS << "-" << dayBS << endl;
     }
 
-    // Function to print the converted date in AD
     void printDateAD() {
-        cout << "Gregorian Date: " << yearAD << "-" << monthAD << "-" << dayAD << endl;
+        cout << "Gregorian Date (AD): " << yearAD << "-" << monthAD << "-" << dayAD << endl;
+    }
+
+    void userInputAndConvert() {
+        char choice;
+        cout << "Enter 'A' to convert from AD to BS, or 'B' to convert from BS to AD: ";
+        cin >> choice;
+
+        if (choice == 'A' || choice == 'a') {
+            string inputDate;
+            cout << "Enter a date in AD format (dd/mm/yyyy): ";
+            cin >> inputDate;
+            istringstream iss(inputDate);
+            int day, month, year;
+            char delimiter;
+            iss >> day >> delimiter >> month >> delimiter >> year;
+
+            yearAD = year;
+            monthAD = month;
+            dayAD = day;
+
+            convertADToBS();
+            printDateBS();
+        } else if (choice == 'B' || choice == 'b') {
+            string inputDate;
+            cout << "Enter a date in BS format (dd/mm/yyyy): ";
+            cin >> inputDate;
+            istringstream iss(inputDate);
+            int day, month, year;
+            char delimiter;
+            iss >> day >> delimiter >> month >> delimiter >> year;
+
+            yearBS = year;
+            monthBS = month;
+            dayBS = day;
+
+            convertBSToAD();
+            printDateAD();
+        } else {
+            cout << "Invalid choice. Please enter 'A' or 'B." << endl;
+        }
     }
 };
 
 int main() {
-    // Example usage to convert AD to BS and vice versa
-    NepaliDate date1(2079, 1, 1, true); // Convert BS to AD
-    date1.printDateAD();
+    NepaliDate dateConverter;
 
-    NepaliDate date2(2022, 4, 13, false); // Convert AD to BS
-    date2.printDateBS();
+    dateConverter.userInputAndConvert();
 
     return 0;
 }
