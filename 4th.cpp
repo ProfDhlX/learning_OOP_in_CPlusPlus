@@ -3,7 +3,7 @@
 #include <vector>
 
 class fourth {
-private:
+private: 
     std::vector<int> arr; // using vector to store nums
 
 public:
