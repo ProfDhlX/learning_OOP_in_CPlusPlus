@@ -10,14 +10,14 @@ public:
 
     void start() {
         std::cout << "Welcome to Rock, Paper, Scissors!" << std::endl;
-        std::cout << "Get ready..." << std::endl;
-        std::cout << "3... ";
+        std::cout << "Get ready...." << std::endl;
+        std::cout << "3.... ";
         std::cout.flush();
         sleep(1);
-        std::cout << "2... ";
+        std::cout << "2.... ";
         std::cout.flush();
         sleep(1);
-        std::cout << "1... ";
+        std::cout << "1.... ";
         std::cout.flush();
         sleep(1);
         std::cout << "Go!" << std::endl;
