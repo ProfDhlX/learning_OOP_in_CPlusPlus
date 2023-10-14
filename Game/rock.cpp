@@ -48,7 +48,7 @@ private:
         endwait = clock() + seconds * CLOCKS_PER_SEC;
         while (clock() < endwait) {}
     }
-
+ 
     void printChoice(int choice) {
         switch (choice) {
             case 0:
