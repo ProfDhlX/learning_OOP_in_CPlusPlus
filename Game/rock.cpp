@@ -11,13 +11,13 @@ public:
     void start() {
         std::cout << "Welcome to Rock, Paper, Scissors!" << std::endl;
         std::cout << "Get ready...." << std::endl;
-        std::cout << "3.... ";
+        std::cout << "1.... ";
         std::cout.flush();
         sleep(1);
         std::cout << "2.... ";
         std::cout.flush();
         sleep(1);
-        std::cout << "1.... ";
+        std::cout << "3.... ";
         std::cout.flush();
         sleep(1);
         std::cout << "Go!" << std::endl;
@@ -49,7 +49,7 @@ private:
         while (clock() < endwait) {}
     }
  
- 
+
     void printChoice(int choice) {
         switch (choice) {
             case 0:
@@ -67,7 +67,7 @@ private:
         }
     }
 
-    int determineWinner(int userChoice, int computerChoice) {
+    int determineWinner(int userChoice, int computerChoice)  {
         if (userChoice == computerChoice) {
             std::cout << "It's a tie!" << std::endl;
         } else if ((userChoice == 0 && computerChoice == 2) ||
