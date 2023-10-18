@@ -1,5 +1,4 @@
-//very simple C++ program for an project login.
-//You can inject this code in your program for login interface. 
+//A login system using OOP . Demonstrating how login system works .
 #include <iostream>
 #include <fstream>
 #include <string>
