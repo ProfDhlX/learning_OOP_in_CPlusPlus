@@ -8,7 +8,7 @@
  3) Initialize and work with the individual objects within the array
 */
 
-//EXAMPLEE
+//EXAMPLE PROGRAM 
 #include<iostream>
 using namespace std;
 class A{
