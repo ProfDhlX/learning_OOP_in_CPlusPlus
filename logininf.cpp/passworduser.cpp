@@ -49,7 +49,7 @@ public:
         ClearDisplay();
     }
 
-    // Function to check if a username and password match for the same person
+    // Function to check if a username and password match for the same person disallowed for regestration
     bool AuthenticateUser(const string &username, const string &password) {
         string storedUsername, storedPassword;
         ifstream file("password.txt");
@@ -60,15 +60,15 @@ public:
         while (file >> storedUsername >> storedPassword) {
             if (username == storedUsername && password == storedPassword) {
                 file.close();
-                return true; // User found
+                return true; // User found now you can login
             }
         }
 
         file.close();
-        return false; // User not found
+        return false; // User not found can t login
     }
 
-    // Main program logic
+    // Main program logic ...
     void Run() {
         int choice;
 
@@ -90,6 +90,7 @@ public:
                     if (AuthenticateUser(username, password)) {
                         cout << "Authentication successful! Access granted." << endl;
                         ClearDisplay();
+                        //here you can write your code which is going to be executed after the login process.
                     } else {
                         cout << "Authentication failed. Please try again." << endl;
                     }
