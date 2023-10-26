@@ -3,12 +3,12 @@
 using namespace std;
 class program{
     public:
-    void initial(){
-
-    }
+    
+//code aaudaixa hai. 
+//you have to wait ..
 
 };
 int main(){
     program obj;
-    obj.initial;
+    obj.abc;
 }
