@@ -2,6 +2,7 @@
 #include <sstream>
 using namespace std;
 
+//creating class for nepalidate conversion.
 class NepaliDate {
 private:
     int yearBS;
